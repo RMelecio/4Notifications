@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package sms;
+
+service SmsService {
+  rpc send (sendRequest) returns (status) {}
+}
+
+message sendRequest {
+  string phoneNumber = 1;
+  string message = 2;
+}
+
+message status {
+  string status = 1;
+}
